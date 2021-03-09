@@ -4,6 +4,8 @@ import Inicio from "./Inicio";
 import PaginaUno from "./PaginaUno";
 import PaginaDos from "./PaginaDos";
 import Contacto from "./Contacto";
+import Civilizationes from "./Civilizationes";
+import Civilizacion from "./Civilizacion";
 
 export const Navbar = () => {
   return (
@@ -36,6 +38,9 @@ export const Navbar = () => {
                 <Link to="/contacto" className="nav-link">
                   Contacto
                 </Link>
+                <Link to="/civilizaciones" className="nav-link">
+                  Civilizaciones{" "}
+                </Link>
               </div>
             </div>
           </div>
@@ -53,6 +58,12 @@ export const Navbar = () => {
           </Route>
           <Route path="/contacto" exact>
             <Contacto />
+          </Route>
+          <Route path="/civilizaciones" exact>
+            <Civilizationes />
+          </Route>
+          <Route path="/civilizaciones/:id" exact>
+            <Civilizacion />
           </Route>
         </Switch>
       </Router>
