@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 const Civilizacion = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // Se obtiene el parámetro id de la URL
   console.log(id);
   const [civilizacion, setCivilizacion] = useState([]);
 
