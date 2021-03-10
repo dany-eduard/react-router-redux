@@ -6,8 +6,13 @@ import PaginaDos from "./PaginaDos";
 import Contacto from "./Contacto";
 import Civilizationes from "./Civilizationes";
 import Civilizacion from "./Civilizacion";
+import PokemonAPI from "./PokemonAPI";
+
+import { Provider } from "react-redux";
+import generateStore from "../redux/store";
 
 export const Navbar = () => {
+  const store = generateStore();
   return (
     <div>
       <Router>
@@ -39,7 +44,10 @@ export const Navbar = () => {
                   Contacto
                 </Link>
                 <Link to="/civilizaciones" className="nav-link">
-                  Civilizaciones{" "}
+                  Civilizaciones
+                </Link>
+                <Link to="/pokemons" className="nav-link">
+                  PokemonAPI
                 </Link>
               </div>
             </div>
@@ -64,6 +72,11 @@ export const Navbar = () => {
           </Route>
           <Route path="/civilizaciones/:id" exact>
             <Civilizacion />
+          </Route>
+          <Route path="/pokemons" exact>
+            <Provider store={store}>
+              <PokemonAPI />
+            </Provider>
           </Route>
         </Switch>
       </Router>
