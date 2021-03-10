@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 const Civilizacion = () => {
   const { id } = useParams();
@@ -9,7 +10,7 @@ const Civilizacion = () => {
   useEffect(() => {
     document.title = `Civilización ${civilizacion.name}`;
     obtenerDatos();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const obtenerDatos = async () => {
     const data = await fetch(
@@ -28,6 +29,9 @@ const Civilizacion = () => {
         <li>TIPO DE ARMA: {civilizacion.army_type}</li>
         <li>BONUS DE LA CIVILIZACIÓN: {civilizacion.team_bonus}</li>
       </ul>
+      <Link to="/civilizaciones">
+        <button className="btn btn-primary">Volver</button>
+      </Link>
     </div>
   );
 };
