@@ -19,7 +19,6 @@ export const Civilizations = () => {
 
   return (
     <div className="container">
-      <h1>Pagina Uno</h1>
       <p>
         Obteniendo los datos de una API{" "}
         <code>
